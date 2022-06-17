@@ -1,0 +1,32 @@
+insert into  Employees (FirstName,LastName, Age,WorkStartDate, JobPosition )
+values ('White', 'Ann', '26', '2022-03-24', 'sales manager'), ('Smith', 'Jhon', '23', '2022-04-20', 'translator'),
+('Castle', 'Rick', '24', '2021-05-26', 'sales manager' ), ('Novak', 'Rick', '25', '2022-01-13', 'assistant'),
+('Connor', 'Kate', '30', '2020-11-17', 'project coordinator'),('White', 'Ivan', '27', '2019-06-24', 'project coordinator'),
+('Barr', 'Ronald', '18', '2022-06-13', 'assistant'),('Broadbet','Maria', '22', '2020-12-24', 'sales manager'),
+('Bosh', 'Nick', '34','2018-12-24', 'HR manager' ), ('Astin', 'Mari', '24', '2020-03-24', 'translator'),
+('Martina', 'Ann', '26', '2022-03-24', 'sales manager'), ('Cold', 'Jhon', '23', '2022-04-20', 'translator'),
+('Jonsons', 'Rick', '24', '2021-05-26', 'sales manager' ), ('Tymek', 'Rick', '25', '2022-01-13', 'assistant'),
+('Parkinson', 'Kate', '30', '2020-11-17', 'project coordinator'),('Valyha', 'Ivan', '27', '2019-06-24', 'project coordinator'),
+('Andersson', 'Ronald', '18', '2022-06-13', 'assistant'),('Coco','Maria', '22', '2020-12-24', 'sales manager'),
+('Brighton', 'Nick', '34','2018-12-24', 'HR manager' ), ('Forbis', 'Mari', '24', '2020-03-24', 'translator');
+
+
+
+alter table Employees
+add column typeOfEmployment varchar (30);
+
+update Employees set typeOfEmployment = 'full time' where JobPosition = 'translator';
+update Employees set typeOfEmployment = 'full time' where JobPosition = 'sales manager';
+update Employees set typeOfEmployment = 'full time' where JobPosition = 'HR manager';
+update Employees set typeOfEmployment = 'part-time' where JobPosition = 'project coordinator';
+update Employees set typeOfEmployment = 'part-time' where JobPosition = 'assistant';
+
+alter table Employees 
+add SalaryID int,
+add foreign key (SalaryID) references MonthSalary (JobID);
+
+update Employees  set SalaryID = 5 where JobPosition = 'translator';
+update Employees set SalaryID= 4 where JobPosition = 'sales manager';
+update Employees set SalaryID = 2 where JobPosition = 'HR manager';
+update Employees set SalaryID = 3 where JobPosition = 'project coordinator';
+update Employees set SalaryID = 1 where JobPosition = 'assistant';
