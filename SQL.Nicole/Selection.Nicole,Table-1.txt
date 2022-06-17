@@ -1,9 +1,0 @@
-select 
-Employees.PersonID, MonthSalary.JobID, Employees.FirstName, Employees.LastName,
-Employees.Age, Employees.WorkStartDate, Employees.JobPosition
-from Employees left join MonthSalary on  Employees.PersonID = MonthSalary.JobID;
-
-select * from Employees; 
-
-
-
