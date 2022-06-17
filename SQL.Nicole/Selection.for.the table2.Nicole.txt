@@ -1,0 +1,7 @@
+select*from MonthSalary;
+
+select 
+MonthSalary.JobID, MonthSalary.moneyPerAnHour, MonthSalary.totalHoursPerMonth,  
+Employees.PersonID, Employees.FirstName, Employees.LastName, Employees.Age, 
+Employees.WorkStartDate, Employees.JobPosition
+from MonthSalary left join Employees on MonthSalary.JobID = Employees.PersonID;

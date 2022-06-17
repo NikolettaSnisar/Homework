@@ -1,0 +1,14 @@
+insert into MonthSalary (JobPosition, moneyPerAnHour, totalHoursPerMonth)
+values ('assistant', '20', '80'), ('HR manager', '33', '160'), ('project coordinator', '27', '90'), 
+('sales manager', '37', '160'), ('translator', '35', '160');
+
+
+alter table MonthSalary
+add EmployeeID int,
+add foreign key (EmployeeID) references  Employees  (PersonID);
+
+update MonthSalary set EmployeeID = 1 where JobPosition = 'translator';
+update MonthSalary set EmployeeID = 2 where JobPosition = 'sales manager';
+update MonthSalary set EmployeeID = 3 where JobPosition = 'HR manager';
+update MonthSalary set EmployeeID = 4 where JobPosition = 'project coordinator';
+update MonthSalary set EmployeeID = 5 where JobPosition = 'assistant';

@@ -1,6 +1,1 @@
-create table MonthSalary (
-JobID int not null primary key auto_increment,
-JobPosition varchar (60) not null,
-moneyPerAnHour  int not null,
-totalHoursPerMonth int  not null
-);
+ table MonthSalary 
