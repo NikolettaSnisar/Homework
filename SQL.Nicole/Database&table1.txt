@@ -1,12 +1,1 @@
-create database Employees;
-
-use Employees;
-
-create table Employees(
-PersonID int not null primary key auto_increment unique,
-FirstName varchar (30),
-LastName varchar (30),
-Age int not null,
-WorkStartDate date,
-JobPosition varchar (60) not null 
-);
+ database Employees & table Employees
